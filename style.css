@@ -1,0 +1,313 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    min-height: 100vh;
+    flex-flow: column nowrap;
+    margin-top: 12vh;
+}
+
+header{
+    display: flex;
+    position: fixed;
+    top: 0;
+    background-color: blue;
+    color: white;
+    height: 12vh;
+    width: 100vw;
+    z-index: 1;
+}
+
+.all{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+header .left{
+    background-color: blue;
+    width: 20%;
+    height: 100%;
+    text-align: center;
+}
+
+header .left a{
+    width: 200px;
+    background-color: #00f;
+}
+
+header .left h4{
+    font-size: 2rem;
+    padding-top: 2vh;
+}
+
+header .right{
+    position: absolute;
+    left: 20%;
+    top: 0;
+    background-color: rgb(0, 0, 255);
+    height: 100%;
+    width: 60%;
+    text-align: center;
+    /* transform: translate(5px,150px); */
+}
+
+.search{
+    width: 15%;
+    height: 100%;
+    font-size: xx-large;
+    position: absolute;
+    /* display: none; */
+    left: 80%;
+    top: 0;
+    padding-top: 2vh;
+}
+
+input{
+    display: none;
+}
+
+.search:hover input{
+    display: inline;
+}
+
+.language{
+    /* width: 5%; */
+    height: 100%;
+    font-size: xx-large;
+    position: absolute;
+    display: block;
+    left: 95%;
+    top: 0;
+    padding-top: 2vh;
+    text-align: left;
+}
+
+.languages{
+display: none;
+position: absolute;
+top: 12vh;
+background-color: blue;
+}
+
+.language:hover .languages{
+display: block;
+left: -100px;
+font-size: normal;
+background-color: transparent;
+color: rgb(0, 0, 255);
+}
+
+a{
+color: white;
+display: block;
+}
+
+header a{
+    text-decoration: none;
+}
+
+.body{
+display: flex;
+}
+
+main a{
+    display: inline;
+    color:rgb(46, 43, 43);
+    font-size: large;
+}
+
+.arabic{
+    text-align: right;
+}
+
+/* .languages p{
+color: red;
+}
+
+.language:hover .languages{
+display: none;
+} */
+
+/* header p , h1{
+display: inline-block;
+width: 60vw;
+} */
+header .left{
+    display: block;
+}
+
+header .left:hover div{
+    display: block;
+    background-color: #00f;
+    color: white;
+    position: absolute;
+    top: 10vh;
+    text-align: left;
+    width: 20%;
+}
+
+.hide{
+    display: none;
+}
+
+img{
+    width: 100%;
+    height: 30vw;
+}
+
+main{
+display: grid;
+grid-template-columns: 50% 50%;
+width: 80%;
+left: 20%;
+height: 100%;
+}
+
+.main-arabic{
+    position: relative;
+    left: 20%;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+    margin: 2vw;
+}
+
+.main p{
+    display: block;
+}
+
+.main-left{
+    background-color: silver;
+    width: 100%;
+}
+
+.main-right{
+    background-color: rgb(158, 151, 108);
+    width: 100%;
+}
+
+ol{
+    list-style: alpha inside;
+}
+
+aside{
+    background-color: rgb(255, 255, 255);
+    color: #00f;
+    height: 100%;
+    width: 20%;
+    position: fixed;
+    left: 80%;
+    top: 12vh;
+}
+
+.arabic-background{
+    left: 0;
+}
+
+footer{
+    background-color: blue;
+    position: fixed;
+    z-index: 1;
+    width: 100vw;
+    bottom: 0;
+    color: white;
+}
+
+@media screen and (width < 1029px)
+{
+    body{
+        margin-top: 15vh;
+    }
+    header{
+        height: 15vh;
+    }
+    header .left:hover div{
+        top: 15vh;
+        }
+    .search{
+        width: 12%;
+    }
+    input{
+        position: absolute;
+        left: -20px;
+    }
+    .language{
+        left: 92%;
+    }
+    .main p{
+        width: 60%;
+    }
+    aside{
+        top: 15vh;
+    }
+}
+
+@media screen and (width < 750px )
+{
+    body{
+        margin-top: 20vh;
+    }
+    header{
+        height: 20vh;
+    }
+    header .left:hover div{
+        top: 20vh;
+        }
+    .search{
+        height: 50%;
+    }
+    .language{
+        top: 10vh;
+        left: 80%;
+    }
+
+    aside{
+        top: 20vh;
+    }
+}
+
+@media screen and (width < 400px)
+{
+    body{
+        margin-top: 25vh;
+    }
+    header{
+        height: 25vh;
+    }
+    header .left h4{
+        font-size: 1.2rem;
+        padding-top: 9vh;
+    }
+    header .left:hover div{
+    top: 25vh;
+    }
+    .language{
+        top: 12.5vh;
+    }
+    main{
+        width: 65%;
+        grid-template-columns: 100%;
+    }
+    img{
+    height: 40vw;
+    }
+    .main{
+        position: relative;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+
+    aside{
+        left: 65%;
+        width: 35%;
+        top: 25vh;
+    }
+}
