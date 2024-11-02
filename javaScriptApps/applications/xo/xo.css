@@ -1,0 +1,19 @@
+#main
+{
+ min-width: 97vw;
+ min-height: 100vw;
+ background: black;
+}
+.box {
+ text-align: center;
+ font-size: 5rem;
+ background: lightgray;
+ color : transparent;
+}
+.row {
+ background: green;
+}
+p {
+ min-width: 49%;
+ display: inline-block;
+}
