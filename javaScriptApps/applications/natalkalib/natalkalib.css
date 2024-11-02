@@ -1,0 +1,11 @@
+table{
+ min-width: 95vw;
+ min-height: 95vw;
+ background-color: black;
+}
+td {
+ min-width: 50px;
+ background-color: lightgray;
+ text-align: center;
+ font-size: 3rem;
+}
