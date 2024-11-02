@@ -1,0 +1,36 @@
+*{
+ margin: 0;
+}
+#inner-canvas {
+ display: relative;
+ background-color: rgba(17, 34, 51, 0.12);
+ border : 1px solid black;
+ margin-top: 5px;
+ margin-left: 5px;
+}
+
+select{
+ max-width : 80px;
+}
+
+.select{
+ font-size: 14px;
+}
+
+.one {
+ font-size: 32px;
+}
+
+.two {
+ font-size: 26px;
+}
+
+.three {
+ font-size: 22px;
+}
+
+@media screen and ( orientation: landscape ) {
+ body{
+  background-color : red;
+ }
+}

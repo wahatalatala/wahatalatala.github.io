@@ -1,0 +1,27 @@
+html {
+  margin: 10px;
+}
+body {
+}
+div {
+  min-height: 25px;
+}
+table {
+  background: #000 url() 0 0 no-repeat;
+  min-width: 70vw;
+  min-height: 70vw;
+}
+tr {
+  background: #fff;
+  text-align: center;
+}
+td {
+  font-size: 5rem;
+  background-color: silver;
+}
+.selected {
+  background-color: darkgray;
+}
+.unselected {
+  background-color: gold ;
+}

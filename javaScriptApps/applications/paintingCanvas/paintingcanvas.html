@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="refresh" content="0; url = https://www.google.com"/>
+<link rel="stylesheet" href="./paintingCanvas.css">
+ <title>painting canvas</title>
+</head>
+
+<body>
+<canvas id="inner-canvas"></canvas>
+<span id="temporary-canvas-container"></span>
+<canvas id="outer-canvas"></canvas>
+<!--<input type="color" name="" id="">-->
+<br>
+<span class="select">select shape </span>
+<select name="" id="shapes">
+ <option value="0">none</option>
+ <option value="1">arc</option>
+ <option value="2">polygon</option>
+ <option value="3">line</option>
+ <option value="4">triangle</option>
+ <option value="5">rectangle</option>
+ <option value="6">ellipse</option>
+ <option value="7">quadratic curve</option>
+ <option value="8">bezier curve</option>
+ <option value="9">curved polygon</option>
+ <option value="10">text</option>
+ <option value="11">pipe</option>
+ <option value="12">diamond</option>
+</select>
+<span class="select">select tool</span>
+<select name="" id="">
+ <option value="0">pen</option>
+ <option value="1">rubber</option>
+ <option value="2">color picker</option>
+ <option value="3">brush</option>
+</select>
+<br><br>
+<br><hr><br>
+<details>
+ <summary class="one">setting</summary>
+<details>
+ <summary class="two">
+  shapes setting
+ </summary>
+ <ol>
+  <li><details><summary class="three">global setting</summary>
+    <ol>
+   <li><label for="scale-factor">scale factor : </label><input type="range" name="scale-factor" min="1" max="20" step="1" value="10" id="scale-factor"><span id="scale-factor-text">1.0</span></li><br>
+   <li><label for="">alpha : </label><input type="range" min="0.0" max="1.0" value="1.0" step="0.01" name="" id="alpha"><span id="alpha-text">1.0</span>
+   </li><br>
+   <li><label for="">line width : </label>
+<button id="plus-button">+</button>
+<span id="line-width">1</span>
+<button id="minus-button">-</button></li><br>
+<li><label for="">interior color : </label><input type="color" name="" id="fill-color"></li><br>
+<li><label for="">outer color : </label><input type="color" name="" id="stroke-color"></li><br>
+  </ol></details></li><br>
+    <!-- arc -->
+    <li><details><summary class="three">arc</summary><ol>
+    <li><label for="">first angle : </label><input type="range" min="0" max="360" value="0" name="" id="first-angle"><span id="first-angle-text">0</span></li><br>
+<li><label for="">second angle : </label><input type="range" min="0" max="360" name="" value="360" id="second-angle"><span id="second-angle-text">360</span></li><br>
+<li><label for="">radius : </label><input type="range" min="1" max="150" name="" value="20" id="arc-radius"><span id="arc-radius-text">20</span></li><br>
+<li><label for="">fill with color : </label><input type="checkbox" name="" id="fill-arc-with-color"></li><br>
+<li><label for="">auto complete : </label><input type="checkbox" name="" id="auto-complete-arc"></li><br>
+</ol></details>
+</li><br>
+    <!-- polygon -->
+    <li><details><summary class="three">polygon</summary>
+    <ol>
+     <li><label for="">polygon lines : </label>
+  <input type="range" name="" min="2" max="99" value="5" id="polygon-lines"><span id="polygon-lines-text">5</span></li><br>
+  <li><label for="">fill with color : </label><input type="checkbox" name="" id="fill-polygon-with-color"></li><br>
+    </ol></details></li><br>
+    <!-- line -->
+    <li><details><summary class="three">line</summary>
+    <ol>
+     <li><label for="">line length : </label><input type="range" name=""inp min="1" max="300" value="50" id="line-length"><span id="line-length-text">50</span></li><br>
+    </ol></details></li><br>
+    <!-- triangle -->
+    <li><details><summary class="three">triangle</summary><ol>
+    <li><label for="">triangle width : </label><input type="range" name="" min="1" max="250" value="50" id="triangle-width"><span id="triangle-width-text">50</span></li><br>
+    <li><label for="">fill with color : </label><input type="checkbox" name="" id="fill-triangle-with-color"></li><br>
+    </ol></details></li><br>
+    <!-- rectangle -->
+    <li><details><summary class="three">rectangle</summary><ol>
+    <li><label for="">rectangle width : </label><input type="range" name="" min="1" max="250" value="50" id="rectangle-width"><span id="rectangle-width-text">50</span></li><br>
+    <li><label for="">rectangle height : </label><input type="range" name="" min="1" max="125" value="30" id="rectangle-height"><span id="rectangle-height-text">30</span></li><br>
+    <li><label for="">fill with color : </label><input type="checkbox" name="" id="fill-rectangle-with-color"></li><br>
+    </ol></details></li><br>
+    <!-- ellipse -->
+    <li><details><summary class="three">ellipse</summary>
+    <ol>
+    <li><label for="">xradius</label><input type="range" name="" min="1" max="150" value="25" id="ellipse-xradius"><span id="ellipse-xradius-text">25</span></li><br>
+    <li><label for="">yradius</label><input type="range" name="" min="1" max="150" value="15" id="ellipse-yradius"><span id="ellipse-yradius-text">15</span></li><br>
+    <li><label for="">first angle : </label><input type="range" min="0" max="360" value="0" name="" id="ellipse-first-angle"><span id="ellipse-first-angle-text">0</span></li><br>
+<li><label for="">second angle : </label><input type="range" min="0" max="360" name="" value="360" id="ellipse-second-angle"><span id="ellipse-second-angle-text">360</span></li><br>
+<li><label for="">rotation degree : </label><input type="range" min="0" max="360" name="" value="0" id="ellipse-rotation-degree"><span id="ellipse-rotation-degree-text">0</span></li><br>
+    <li><label for="">fill with color : </label><input type="checkbox" name="" id="fill-ellipse-with-color"></li><br>
+    </ol></details>
+    </li><br>
+    
+    <!-- quatratic curve -->
+    <li><details><summary class="three">quadratic curve</summary>
+    <ol>
+     <li><label for="">fill with color : </label><input type="checkbox" name="" id="fill-quad-with-color"></li><br>
+    </ol></details>
+    </li><br>
+ 
+    <!-- bezier curve -->
+    <li><details><summary class="three">bezier curve</summary>
+    <ol>
+ <li><label for="">fill with color : </label><input type="checkbox" name="" id="fill-bezier-with-color"></li><br>
+</ol></details>
+    </li><br>
+    
+    <!-- curved polygon -->
+    <li><details><summary class="three">curved polygon</summary>
+    <ol>
+ <li><label for="">fill with color : </label><input type="checkbox" name="" id="fill-curved-with-color"></li><br>
+</ol></details>
+    </li><br>
+    
+    <!-- text -->
+    <li><details><summary class="three">text</summary>
+    <ol>
+     <li><label for="">font size : </label><input type="range" name="" min="8" max="64" value="22" id="font-size"><span id="font-size-text">22</span></li><br>
+    </ol></details></li><br>
+    
+    <!-- pipe -->
+    <li><details><summary class="three">pipe</summary>
+    <ol>
+     <li><label for="">xradius1 : </label><input type="range" name="" min="1" max="105" value="15" id="pipe-xradius1"><span id="pipe-xradius1-text">15</span></li><br>
+     <li><label for="">yradius1 : </label><input type="range" name="" min="1" max="25" value="10" id="pipe-yradius1"><span id="pipe-yradius-text">10</span></li><br>
+     <li><label for="">xradius2 : </label><input type="range" name="" min="1" max="105" value="15" id="pipe-xradius2"><span id="pipe-xradius2-text">15</span></li><br>
+<li><label for="">yradius2 : </label><input type="range" name="" min="1" max="25" value="10" id="pipe-yradius2"><span id="pipe-yradius2-text">10</span></li><br>
+     <li><label for="">height : </label><input type="range" name="" min="10" max="95" value="10" id="pipe-height"><span id="pipe-height-text">10</span></li><br>
+       <li><label for="">first angle1 : </label><input type="range" min="0" max="360" value="0" name="" id="pipe-first-angle1"><span id="pipe-first-angle1-text">0</span></li><br>
+  <li><label for="">second angle1 : </label><input type="range" min="0" max="360" name="" value="360" id="pipe-second-angle1"><span id="pipe-second-angle1-text">360</span></li><br>
+  <li><label for="">first angle2 : </label><input type="range" min="0" max="360" value="0" name="" id="pipe-first-angle2"><span id="pipe-first-angle2-text">0</span></li><br>
+<li><label for="">second angle2 : </label><input type="range" min="0" max="360" name="" value="360" id="pipe-second-angle2"><span id="pipe-second-angle2-text">360</span></li><br>
+     <li><label for="">fill with color : </label><input type="checkbox" name="" id="fill-pipe-with-color"></li><br>
+    </ol></details></li><br>
+    
+    <!-- diamond -->
+    <li><details><summary class="three">diamond</summary>
+    <ol>
+     <li><label for="">width</label><input type="range" name="" id="diamond-width"><span id="diamond-width-text">25</span></li><br>
+     <li><label for="">height : </label><input type="range" name="" id="diamond-height"><span id="diamond-height-text">45</span></li><br>
+     <li><label for="">fill with color : </label><input type="checkbox" name="" id="fill-diamond-with-color"></li><br>
+    </ol></details></li><br>
+  
+  </li> 
+ </ol>
+</details>
+<details>
+ <summary class="two">tools setting</summary>
+</details>
+</details>
+<br><hr><br>
+
+<details><summary class="one">code</summary>
+<ol>
+ <li><details><summary class="two">download</summary>
+ <ol>
+ <li><a href="#">google</a></li>
+ <li><a href="#">media fire</a></li>
+</ol>
+ </details></li>
+ <li><details><summary class="two">view</summary>
+ <a href="#">view page</a>
+ </details></li>
+</ol>
+</details>
+
+<br><hr><br>
+
+<details>
+<summary class="one">to do list</summary>
+<button>clip</button>
+<button>starting degree</button>
+<button>ending degree</button>
+<button>circle</button>
+<button>ellipse</button>
+<button>radius 0-2PI</button>
+<button>leg length</button>
+<button>stroke style</button>
+<button>fill style</button>
+<button>glopal alpha value</button>
+<button>auto complete polygon or shapes(close path)</button>
+<button>auto draw shape</button>
+<button>shadow</button>
+<button>font</button>
+<button>text</button>
+<button>pipe</button>
+<button>images for shapes</button>
+<button>data view charts shapes</button>
+<button>ability to edit shapes after drawing them immediately</button>
+<button>redo and undo</button>
+<button>items explanation and discription</button>
+<button>translate</button>
+<button>scale</button>
+<button>try transform</button>
+<button>copy canvas data to image</button>
+<button>tools</button>
+<button>check if browser support details tag</button>
+<button>linear and radiant gradient</button>
+<button>unfill style</button>
+<button>line options</button>
+<button>draw image</button>
+<button>clockwise</button>
+<button>load and save shape or setting</button>
+<button>basic and advanced setting</button>
+<button>degree or radii(0-2PI or 0-360)</button>
+<button>triangle diagonal legs length</button>
+<button>rubber to remove parts of drawing</button>
+<button>brush to paint like using drawing brush</button>
+<button>an object to store currently  drawn shapes data so could be removed and redrawn if needed</button>
+<button>a tool to copy color from specified pixel or area</button>
+<button>ability to add more ready to use shapes editing by some setting</button>
+</details>
+<br><hr><br><br><br><br><br>
+<!--<details><summary>basic setting</summary>
+<details><form class="" action="#" method="get" accept-charset="utf-8">
+ 
+ <summary>polygon setting</summary>
+ <input type="number"  id="range">
+ <select name="yyoyou" id="yyoyou">
+  <option value="yyoyou">yyoyou</option>
+  <option value="gghghh">gghghh</option>
+ </select>
+</details>
+<details>
+ <summary>arc setting</summary>
+</details>
+<details>
+ <summary>to do list :</summary>
+  <ol>
+  <li>starting degree</li>
+  <li>ending degree</li>
+  <li>clockwise</li>
+  <li>clip</li>
+  <li>polygon degree</li>
+  <li>close path</li>
+  <li>save and load status</li>
+  <li>scale , translate</li>
+  <li>edit shape size , direction and position after drawing</li>
+  <li>free drawing(not now)</li>
+  <li>auto draw ex triangle click once in the center or click three different points to decide angles and sizes</li>
+  <li>ellipse</li>
+  <li>shadow</li>
+  <li>opacity</li>
+  <li>line width</li>
+  <li>font</li>
+  <li>connect shapes</li>
+ </ol>
+</details>
+</details>
+<input type="submit" value="submit"></form>
+<details>
+ <summary>advanced setting</summary>
+</details>-->
+<script src = "./paintingCanvas.js"></script>
+</body>
+
+</html>

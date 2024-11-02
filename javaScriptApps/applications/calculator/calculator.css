@@ -1,0 +1,21 @@
+table{
+ background-color: red;
+ min-width: 97vw;
+}
+div {
+ background-color: green;
+ text-align: center;
+}
+td {
+ background-color:yellow ;
+}
+button{
+ min-width: 100%;
+}
+#text
+{
+ background-color: white;
+}
+em {
+ color : transparent ;
+}
